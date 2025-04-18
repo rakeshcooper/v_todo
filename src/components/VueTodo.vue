@@ -4,7 +4,7 @@
         <input type="text" name="inputTodo" id="inputTodo">
         <button>Add</button>
         <ul></ul>
-        <button @click="countIncrement">count :{{ count }}</button>
+        <button class="btn"  @click="countIncrement">count :{{ count }}</button>
 
     </div>
 </template>
@@ -16,9 +16,12 @@ let count = ref(0)
 
 function countIncrement(){
     count.value +=1
+
 }
 </script>
 
 <style lang="scss" scoped>
-
+    .btn{
+        
+    }
 </style>
