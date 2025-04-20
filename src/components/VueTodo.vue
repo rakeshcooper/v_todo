@@ -6,7 +6,7 @@
         <ul>
             <li :key="dat" v-for="dat in data">
                 <span :class="{checked: dat.isChecked}">{{ dat.todo }}</span>
-                <span v-if="dat.isEdited"><input v-model="dat.todo" @input="updateInputvalue" type="text"><button @click="updateHandler(dat.ID)">update</button></span>
+                <span v-if="dat.isEdited"><input :value="dat.todo" @input="updateInputvalue" type="text"><button @click="updateHandler(dat.ID)">update</button></span>
                 <span><button @click="editHandler(dat.ID)">{{dat.isEdited ? "cancel" : "edit"}}</button></span>
                 <span><button @click="deleteHandler(dat.ID)">delete</button></span>
                 <span><button @click="checkHandler(dat.ID)">{{dat.isChecked ? "undone" : "done"}}</button></span>
