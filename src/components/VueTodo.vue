@@ -95,7 +95,4 @@ watch(() => data, (newVal) => {
         text-decoration: line-through;
     }
 
-    .unchecked{
-        text-decoration: none;
-    }
 </style>
