@@ -4,7 +4,7 @@
         <input ref="mainInput" @input="getInputvalue" type="text" name="inputTodo" id="inputTodo">
         <button @click="addHandler">Add</button>
         <ul>
-            <li :key="dat" v-for="dat in data">
+            <li :key="index" v-for="(dat,index) in data">
                 <span :class="{checked: dat.isChecked}">{{ dat.todo }}</span>
                 <span v-if="dat.isEdited"><input :value="dat.todo" @input="updateInputvalue" type="text"><button @click="updateHandler(dat.ID)">update</button></span>
                 <span><button @click="editHandler(dat.ID)">{{dat.isEdited ? "cancel" : "edit"}}</button></span>
@@ -74,7 +74,6 @@ function checkHandler(ID){
         if(element.ID == ID){
             data[index] = { ...element, isChecked: !element.isChecked }
             console.log( data[index]);
-            
         }
     })
 }
